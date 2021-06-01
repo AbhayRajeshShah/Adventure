@@ -5,9 +5,14 @@ var wallPic = document.createElement("img");
 var treePic = document.createElement("img");
 var flagPic = document.createElement("img");
 var goalPic = document.createElement("img");
-var otherCarPic = document.createElement("img");
-
-
+var facingLeft = document.createElement("img");
+var heart=document.createElement("img");
+var lavaPic = document.createElement("img");
+var batPic= document.createElement("img");
+var batDownPic= document.createElement("img");
+var batAbovePic= document.createElement("img");
+var projectilePic=document.createElement("img");
+var projectileLeftPic=document.createElement("img");
 
 var picsToLoad = 0; // set automatically based on imageList in loadImages()
 
@@ -34,7 +39,15 @@ function loadImages() {
 		{varName: wallPic, theFile: "world_wall.png"},
 		{varName: treePic, theFile: "world_tree.png"},
 		{varName: goalPic, theFile: "world_goal.png"},
-		{varName: flagPic, theFile: "world_flag.png"}
+		{varName: flagPic, theFile: "world_flag.png"},
+		{varName: facingLeft, theFile: "player1carleft.png"},
+		{varName: heart, theFile: "heart.png"},
+		{varName: lavaPic, theFile: "thorn.png"},
+		{varName: batPic, theFile: "bat.png"},
+		{varName: batDownPic, theFile: "bat-down.png"},
+		{varName: batAbovePic, theFile: "bat-medium.png"},
+		{varName: projectilePic, theFile: "projectile.png"},
+		{varName: projectileLeftPic, theFile: "projectileleft.png"},
 		];
 
 	picsToLoad = imageList.length;
@@ -42,4 +55,5 @@ function loadImages() {
 	for(var i=0;i<imageList.length;i++) {
 		beginLoadingImage(imageList[i].varName, imageList[i].theFile);
 	}
+
 }

@@ -4,7 +4,7 @@ var canvasContext;
 canvas=document.getElementById("gameCanvas");
 canvasContext=canvas.getContext("2d");
 var bluePlayer=new playerclass();
-
+var npc = new bat();
 
 
 //frames
@@ -17,7 +17,9 @@ function imageLoadingDoneSoStartGame(){
    
     var framesPerSec=50;
     setInterval(all,1000/framesPerSec);
+    
     loadlevel(levelOne);
+    bluePlayer.hp=60;
     
         
 }
@@ -29,10 +31,10 @@ function loadlevel(whichLevel){
         if(trackGrid[i]==goal){
             trophies++;
         }
-        console.log(trophies);
+        
+        projectileBatCollision=true;
     }
 
-bluePlayer.playerReset(carPic);
 
 
 }
@@ -49,15 +51,20 @@ function moveAll(){
     
     bluePlayer.playerMove();
     bluePlayer.tracksmh();
+    npc.edgeWrap();
+    npc.move();
+    
 }
-
 
 rect(0,0,canvas.width,canvas.height,"black");
 
 function drawAll(){
+    
+bluePlayer.playerReset();
 trackCreate();
-bluePlayer.playerReset(carPic);
-
+bluePlayer.check(npc);
+bluePlayer.draw();
+npc.draw(projectileBatCollision);
 }
 
 
