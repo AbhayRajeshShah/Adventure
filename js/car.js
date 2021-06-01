@@ -111,7 +111,12 @@ trackGrid[index]=0;
        }else{
            this.y-=this.speed;
        }
-    this.x-=this.speed;
+       if(this.x<canvas.width/2){
+        this.x+=this.speed;
+       }else if(this.x>canvas.width/2){
+        this.x-=this.speed;
+       }
+    
 }
 }
 }
