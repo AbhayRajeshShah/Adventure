@@ -4,6 +4,7 @@ var up_arrow = 38;
 var down_arrow = 40;
 var left_arrow = 37;
 var right_arrow = 39;
+var space=32;
 
 var w=87;
 var s=83
@@ -16,7 +17,7 @@ var d=68;
 document.addEventListener("keydown",keyPressed);
 document.addEventListener("keyup",keyRelease);
 
-bluePlayer.controls(up_arrow,down_arrow,right_arrow,left_arrow);
+bluePlayer.controls(up_arrow,down_arrow,right_arrow,left_arrow,space);
 
 function setInput(event,whichPlayer,setTo){
     if(event.keyCode==whichPlayer.down){
@@ -30,6 +31,9 @@ function setInput(event,whichPlayer,setTo){
     }
     if(event.keyCode==whichPlayer.right){
         whichPlayer.rightCheck=setTo;
+    } 
+    if(event.keyCode==whichPlayer.fire){
+        whichPlayer.fireCheck=setTo;
     } 
 }
 
