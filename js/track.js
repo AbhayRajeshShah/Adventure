@@ -7,8 +7,8 @@ var levelOne = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
                 1, 4, 0, 4, 0, 1, 0, 0, 0, 0, 0, 5, 0, 3, 0, 1,
                 1, 1, 1, 5, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-                1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-                1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                1, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1,
                 1, 0, 0, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 1,
                 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1,
                 1, 0, 0, 1, 1, 5, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1,
@@ -21,7 +21,7 @@ const wall=1;
 const tree=4;
 const flag=5;
 const goal=3;
-
+const lava =6;
 
 
                  //removing tracks
@@ -41,9 +41,12 @@ const goal=3;
                     case tree: img=treePic;break;
                     case flag: img=flagPic;break;
                     case goal: img=goalPic;break;
+                    case lava: img=lavaPic;break;
                 }
                 canvasContext.drawImage(roadPic,i*trackW,j*trackH);
+                
                 canvasContext.drawImage(img,i*trackW,j*trackH);
+                
             }
         }
     

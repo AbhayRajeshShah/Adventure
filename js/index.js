@@ -4,6 +4,8 @@ var canvasContext;
 canvas=document.getElementById("gameCanvas");
 canvasContext=canvas.getContext("2d");
 var bluePlayer=new playerclass();
+var npc = new bat();
+var zombies = new zombie();
 
 
 
@@ -17,7 +19,9 @@ function imageLoadingDoneSoStartGame(){
    
     var framesPerSec=50;
     setInterval(all,1000/framesPerSec);
+    
     loadlevel(levelOne);
+
     
         
 }
@@ -29,10 +33,10 @@ function loadlevel(whichLevel){
         if(trackGrid[i]==goal){
             trophies++;
         }
-        console.log(trophies);
+        
+        projectileBatCollision=true;
     }
 
-bluePlayer.playerReset(carPic);
 
 
 }
@@ -46,18 +50,31 @@ function all(){
 
 
 function moveAll(){
-    
+    zombies.checkMove();
     bluePlayer.playerMove();
     bluePlayer.tracksmh();
+    npc.edgeWrap();
+    npc.move(projectileBatCollision);
+    zombies.tracsmh();
+    zombies.move(projectileZombieCollision);
+    
+    
+    
 }
-
 
 rect(0,0,canvas.width,canvas.height,"black");
 
 function drawAll(){
+ 
+ zombies.reset();
+bluePlayer.playerReset();
 trackCreate();
-bluePlayer.playerReset(carPic);
+zombies.draw(projectileZombieCollision); 
+bluePlayer.check(npc);
+zombies.checkCollison(bluePlayer,projectileZombieCollision);
 
+bluePlayer.draw();
+npc.draw(projectileBatCollision);
 }
 
 
