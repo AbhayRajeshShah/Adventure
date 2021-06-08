@@ -1,16 +1,41 @@
 <html>
     <head>
         <title>
-            car race
+            Adventure
         </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        
         <canvas id="gameCanvas" height="600" width="800"></canvas>
+        <div class="instructions">
+          <div class="row">
+           <div class="col-lg-3">
+                   <img src="arrowKeys.png" alt="">
+                   <img src="z&x.png" alt="">
+           </div>
+           <div class="col-lg-9">
+                  <p>
+                      You are in a one of a kind adventure where your goal is to come out alive with a total of 4 trophies placed all across the map.But beware! Zombies have taken over and are protecting these trophies with their all.There a variety of obstacles that require certain equipment.Equipment is collected automaticaly and added to your inventory.Also they are used automatically when you go to the obstacle so think twice if you really need to clear the obstacle or avoid it.You have very basic warfare equipments and a large task to accomplish ahead.Good luck!
+                  </p>
+                  <p>
+                      Arrow keys for movement. Z for melee attack and X for ranged Fire.
+                  </p>
+        </div>
+          </div>
+        </div>
     </body>
     <script src="js/graphics.js"></script>
     <script src="js/image.js"></script>
+    <script src="js/plant.js"></script>
+    <script src="js/zombie.js"></script>
+    <script src="js/shooterZombie.js"></script>
+    <script src="js/projectile.js"></script>
+    <script src="js/bat.js"></script>
     <script src="js/car.js"></script>
     <script src="js/track.js"></script>
+    
     <script src="js/index.js"></script>
     <script src="js/input.js"></script>
     
